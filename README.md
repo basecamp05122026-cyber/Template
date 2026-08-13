@@ -38,6 +38,7 @@
 | `longterm/wake_001-001.md` + `_index.md` | §4 見林 | 手寫範本（真人由 `consolidate` 產生） |
 | `wakes/000001_*.md` | §5 見樹 | 收尾信範本 |
 | `_wake_brief.md` | 全部 | **機械產物**，每次 morning / `brief` 重生成 |
+| `_baseline/p0_morning_baseline.md` | （非 brief 層）| 現行 Python morning/goodnight 的行為快照 —— Cmd_GoodMorning 遷移（Plan_Awakening_Flow_Simplification §8.9）各期驗收的 diff 對照組 |
 
 ## 硬規矩：`wakes/` 信件數 vs registry `wake_count` —— **分兩種狀態，別只記一句**
 
