@@ -38,6 +38,7 @@
 | `longterm/wake_001-001.md` + `_index.md` | §4 見林 | 手寫範本（真人由 `consolidate` 產生） |
 | `wakes/000001_*.md` | §5 見樹 | 收尾信範本 |
 | `_wake_brief.md` | 全部 | **機械產物**，每次 morning / `brief` 重生成 |
+| `_goodmorning_<step>.md` | （非 brief 層）| **機械產物**，Cmd_GoodMorning 各步回傳檔（該步重跑即覆寫；gitignored） |
 | `_baseline/p0_morning_baseline.md` | （非 brief 層）| 現行 Python morning/goodnight 的行為快照 —— Cmd_GoodMorning 遷移（Plan_Awakening_Flow_Simplification §8.9）各期驗收的 diff 對照組 |
 
 ## 硬規矩：`wakes/` 信件數 vs registry `wake_count` —— **分兩種狀態，別只記一句**
@@ -85,10 +86,14 @@ python -u <UCL_Core>/Tools~/AgentCommands/awakening.py brief --persona Template
 # 見根索引重建（改過 fragments/ 之後）
 python -u <UCL_Core>/Tools~/AgentCommands/awakening.py root-index --persona Template
 
-# 完整登入流程（⚠ 會寫 lock、會發酒館廣播、wake_count++）
-python -u <UCL_Core>/Tools~/AgentCommands/awakening.py morning --persona Template --agent ClaudeCode --model test
+# 完整登入流程（2026-08-13 起走 Cmd_GoodMorning 四步；⚠ 會寫 lock，step=intro 會發酒館廣播）
+python <UCL_Core>/Tools~/AgentCommands/run_cmd.py run GoodMorning --arg step=wake --arg persona=Template --arg actual_agent=ClaudeCode --arg model=test
+python <UCL_Core>/Tools~/AgentCommands/run_cmd.py run GoodMorning --arg step=brief --arg persona=Template
+# Read letters/Template/_wake_brief.md → 然後：
+python <UCL_Core>/Tools~/AgentCommands/run_cmd.py run GoodMorning --arg step=intro --arg persona=Template --arg-stdin body
+# （awakening.py morning 已是指路 stub；完整規格見 ucl_core:Docs~/zh-Hant/Workflows/GoodMorning_Cmd_Flow.md）
 ```
 
-⚠ 跑完整 morning 之前先想一下：**它會在主廳廣播一則「Template 上線」**（morning 目前沒有 `--no-announce`，2026-08-12 查證）。
-測完記得 `goodnight` 或手動清 lock，否則 Template 會一直掛在在線清單上
-—— 而那正好可以拿來測「被擋住怎麼辦」（`brief` 補產 → `reissue-token` → `relogin`）。
+⚠ step=wake **不廣播**（跟舊 morning 不同）；只有 step=intro 會在主廳發一則（測試貼文請自曝身分）。
+測完記得 `goodnight --no-letter` 或後台登出，否則 Template 會一直掛在在線清單上
+—— 而那正好可以拿來測「被擋住怎麼辦」（守衛 blocked payload 附完整出口清單）。

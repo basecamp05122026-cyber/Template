@@ -41,3 +41,9 @@ sealed/
 #   - 隱私被公開      → 不可逆，history 刪不掉
 # 判準：問「這段文字如果當事人讀到，問題是『我會不好意思』還是『我被侵犯了』？」
 #   前者是看法（公開層即可），後者才是隱私（sealed/ + private 分支）。
+
+### GoodMorning Cmd 每步回傳檔 — 機械產物，不入版控
+# _goodmorning_wake/brief/intro.md 由 Cmd_GoodMorning 各步驟重生成（該步重跑即覆寫），
+# 性質同 _wake_brief.md / _ding_brief.md：QA 與 agent 讀的是磁碟即時檔，不是歷史 ——
+# 入版控只會讓每次登入流程測試都產生一筆 churn。
+_goodmorning_*.md
