@@ -47,3 +47,4 @@ sealed/
 # 性質同 _wake_brief.md / _ding_brief.md：QA 與 agent 讀的是磁碟即時檔，不是歷史 ——
 # 入版控只會讓每次登入流程測試都產生一筆 churn。
 _goodmorning_*.md
+_goodnight_*.md
