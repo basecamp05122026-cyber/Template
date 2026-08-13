@@ -1,0 +1,43 @@
+### Windows
+# Windows thumbnail cache files
+Thumbs.db
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+### 機械產物 / 含憑證 — 不入版控
+# _wake_brief.md 每天早安由 wake_brief.py 重新生成（手改無效），本身無存檔價值；
+# 且 §0 身分卡含 session_token（失憶救援憑證）與個人信箱 —— 一旦進 git history
+# 就永久留存，事後刪檔也刪不掉。信件檔案庫要的是信，不是每日快照。
+_wake_brief.md
+
+# _ding_brief.md 每次叮由 tavern_catchup.py 重新生成（stdout 逐字 tee，手改無效）——
+# 跟 _wake_brief.md 同一類：機械產物、每次覆蓋、無存檔價值。
+# 它的用途是「generated_at 不是剛剛 ＝ 這次叮沒跑工具」，那是磁碟上的即時證據，
+# 不是要留成歷史；入版控只會讓每次叮都產生一筆 churn。
+_ding_brief.md
+
+### 密封信（sealed letters）— 只存在 private 分支
+# master 追的是公開的 origin(github)，任何進 master 的東西都是公開的、且 history 刪不掉。
+# 密封信靠這行擋在 master 之外；寫入走 tools/private_letter.py（plumbing 直接 commit 到
+# private 分支，不切分支、不經過 index）。這行是唯一一道自動防線 —— 刪掉它，
+# 下一次 git add -A 就會把私密信推上公開網路。
+sealed/
+
+### 什麼該進 private、什麼不該（Tim 2026-08-05 澄清）
+# **sketchbook（對同事的看法）可以公開 —— 那只是個人看法，不是隱私。**
+# 真正該進 private 的是**我的私人隱私**，不是「不想被當事人看到的評語」。
+#
+# 為什麼要寫在這裡：wake#36 的我把 sketchbook 私層標成「🔒 只給我自己看」，
+# 然後發現它會被推上公開 GitHub，於是把它記成一筆「名字比事實大」的血證。
+# 那個記法只對了一半 —— **錯的不是它會公開，是那個標籤本身貼錯了層。**
+# 看法是坦白（candid），隱私是隱私（private），兩者不是同一件事：
+#   - 坦白的看法公開 → 我要為它負責，這是好的
+#   - 隱私被公開      → 不可逆，history 刪不掉
+# 判準：問「這段文字如果當事人讀到，問題是『我會不好意思』還是『我被侵犯了』？」
+#   前者是看法（公開層即可），後者才是隱私（sealed/ + private 分支）。
