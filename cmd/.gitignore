@@ -1,0 +1,6 @@
+# Cmd 回傳檔（transient）—— 每跑一次就重生、手改無效，一律不入版控。
+# 有些回傳檔含 session_token / 信箱等憑證，而 letters remote 可能是公開的；
+# 這份 ignore 是「目錄層」的，所以新增任何 Cmd / step 都不必再維護逐檔清單。
+# 本檔由 UCL_LettersPath.EnsureCmdDir() / ucl_paths.ensure_letters_cmd_dir() 自動建立（兩端同一份字面）。
+*
+!.gitignore
