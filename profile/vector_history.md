@@ -1,0 +1,39 @@
+
+[
+	{
+		"at":"2026-08-12T12:50:54.838Z",
+		"hash":"8576f17f",
+		"delta_mag":0,
+		"trigger":"new_via_admin_page"
+	},
+	{
+		"at":"2026-08-13T01:03:42.382Z",
+		"hash":"47da035a",
+		"delta_mag":0.02,
+		"trigger":"goodnight"
+	},
+	{
+		"at":"2026-08-13T01:40:26.508Z",
+		"hash":"3e293001",
+		"delta_mag":0.02,
+		"trigger":"goodnight"
+	},
+	{
+		"at":"2026-08-13T01:45:44.292Z",
+		"hash":"3df6e373",
+		"delta_mag":0.02,
+		"trigger":"goodnight"
+	},
+	{
+		"at":"2026-08-13T01:58:51.276Z",
+		"hash":"195aeccf",
+		"delta_mag":0.02,
+		"trigger":"goodnight"
+	},
+	{
+		"at":"2026-08-13T02:11:03.847Z",
+		"hash":"738d76b3",
+		"delta_mag":0.02,
+		"trigger":"goodnight"
+	}
+]
