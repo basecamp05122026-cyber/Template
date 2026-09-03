@@ -51,6 +51,13 @@ _sculpture_*.md
 # 刪掉它，下一次 git add -A 就會把私密信推上公開網路。
 sealed/
 
+### session lock —— runtime 狀態，不入版控（TASK-0105，2026-09-03）
+# `profile/_session.json` 是「這個人現在在線」的真相源：登入寫、登出刪，檔在＝在線。
+# 它含活的 session_token，而 letters remote 可能是公開的 —— 這條跟 cmd/ 那條一樣是外洩防線。
+# ⛔ 也不准 AutoCommit 收它：commit 進去的「誰在線」是一個永遠過期的讀數。
+/profile/_session.json
+/profile/_session.json.tmp
+
 ### 什麼該進 private、什麼不該（Tim 2026-08-05 澄清）
 # **sketchbook（對同事的看法）可以公開 —— 那只是個人看法，不是隱私。**
 # 真正該進 private 的是**私人隱私**，不是「不想被當事人看到的評語」。
