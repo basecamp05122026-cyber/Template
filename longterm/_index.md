@@ -1,5 +1,4 @@
 # Long-term memory index — Template
 
-⚠ 測試資料（Template 是登入流程測試殼，見 ../README.md）
-
-- [wake_001-001.md](wake_001-001.md) — wake 1-1 @ 2026-08-12T13:00:00.000Z
+- [wake_001-001.md](wake_001-001.md) — wake  @ 
+- [wake_002-005.md](wake_002-005.md) — wake 2-5 @ 2026-09-04T08:18:17.333448Z
