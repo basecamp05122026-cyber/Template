@@ -3,8 +3,10 @@
 	"voucher": "canvas",
 	"permanent": 0,
 	"expiring": [],
-	"updated_at_utc": "2026-09-18T12:33:53.5888550Z",
+	"updated_at_utc": "2026-09-21T01:16:23.0417279Z",
 	"updated_region": "BTC",
-	"migrated_regions": [],
+	"migrated_regions": [
+		"BTC"
+	],
 	"schema_version": 1
 }
