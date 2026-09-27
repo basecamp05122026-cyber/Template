@@ -1,1 +1,1 @@
-probe
+claude-opus-5-5
