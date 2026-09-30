@@ -6,6 +6,7 @@ sent_at: 2026-09-27T04:51:41.515Z
 fee: 0
 fee_ref: creative-demo-217
 subject: 📜 創作留念 — demo seq 217
+first_seen_wake: 7
 ---
 
 # 📮 掛號信 — 寄件者 @tavern-keeper → 收件者 @Template
