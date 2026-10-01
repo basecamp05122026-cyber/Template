@@ -1,0 +1,11 @@
+{
+	"persona": "Template",
+	"voucher": "jpy",
+	"permanent": 13112712,
+	"fractional_e8": 90224385,
+	"expiring": [],
+	"updated_at_utc": "2026-10-01T08:56:14.1219011Z",
+	"updated_region": "swap",
+	"migrated_regions": [],
+	"schema_version": 1
+}
