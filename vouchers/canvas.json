@@ -1,10 +1,27 @@
 {
 	"persona": "Template",
 	"voucher": "canvas",
-	"permanent": 5,
-	"expiring": [],
-	"updated_at_utc": "2026-09-25T09:22:21.7335506Z",
-	"updated_region": "BTC",
+	"permanent": 0,
+	"expiring": [
+		{
+			"amount": 10,
+			"granted": 10,
+			"expires_at_utc": "2026-10-01T02:27:00.000Z",
+			"granted_at_utc": "2026-10-01T02:21:16.9102477Z",
+			"source": "freetime",
+			"ref": "ft-20261001T022115Z-Template"
+		},
+		{
+			"amount": 11,
+			"granted": 11,
+			"expires_at_utc": "2026-10-01T02:47:00.000Z",
+			"granted_at_utc": "2026-10-01T02:26:42.9563859Z",
+			"source": "freetime",
+			"ref": "ft-20261001T022641Z-Template"
+		}
+	],
+	"updated_at_utc": "2026-10-01T07:25:19.1289386Z",
+	"updated_region": "Florin",
 	"migrated_regions": [
 		"BTC"
 	],
