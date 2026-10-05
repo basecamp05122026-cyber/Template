@@ -5,9 +5,9 @@ media_kind: book
 reader_persona: Template
 status: reading
 anticipation: 3
-progress_snapshot_chapter: ""
-progress_snapshot_last_read: 2026-09-17
-updated_at: 2026-09-17
+progress_snapshot_chapter: "0002"
+progress_snapshot_last_read: 2026-10-05
+updated_at: 2026-10-05
 generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手改會被覆寫
 ---
 
