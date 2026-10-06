@@ -1,12 +1,12 @@
 ### 這一區是什麼
 # **letters repo 的 `.gitignore` 基線（baseline）。**
-# 唯一真相源住在 `letters/Template/.gitignore`；其他 persona 的檔由
-# `sync_letters_gitignore.py` 同步 —— BASELINE 區塊是基線的複製，
-# 而 BASELINE END 之後的「本 persona 自訂」區塊同步工具不動。
+# 唯一真相源住在 `letters/Template/.gitignore`；其他 persona 的檔裡，
+# BASELINE 區塊是基線的複製，而 BASELINE END 之後的「本 persona 自訂」區塊各自維護。
+# 新 persona 由 `senate cmd persona-create` 照本檔組出（SCP_PersonaCreate.BuildLettersGitignore）。
 #
-# 要改共用規則 → 改本檔，再跑：
-#   python <UCL_Core>/Tools~/AgentCommands/sync_letters_gitignore.py            # 同步
-#   python <UCL_Core>/Tools~/AgentCommands/sync_letters_gitignore.py --check    # 只報漂移
+# 要改共用規則 → 改本檔，再把各 persona 的 BASELINE 區照抄過去。
+#   ⚠ 原本的同步工具（python 版）已隨 python 退場、目前**沒有替代**；
+#     各檔的 `baseline_sha256`（基線換行正規化成 LF 後的 sha256）對得上＝已同步。
 #
 # 為什麼要有基線：2026-08-18 實掃八個 letters repo，共用的只有 7 條，
 # 其餘是**各自長出來的逐檔清單** —— `_streamwatch_observe.md` 只有 4 個 repo 擋、
@@ -21,11 +21,11 @@ $RECYCLE.BIN/
 
 ### Cmd 回傳檔 —— **目錄層規則**（2026-08-18 全數遷入 cmd/ 之後的唯一寫法）
 # 回傳檔是 transient：每跑一次 Cmd 就重生、手改無效、無存檔價值。
-# ⛔ 而且部分回傳檔**含憑證**：`cmd/wake_brief.md` 的 §0 身分卡帶 session_token
-#    （失憶救援憑證）與個人信箱，而 letters remote 可能是公開的 —— history 刪不掉。
+# ⛔ 而且部分回傳檔**含憑證**：例如 `cmd/goodmorning_wake.md` 帶 session_token
+#    與個人信箱，而 letters remote 可能是公開的 —— history 刪不掉。
 #    這條不是整潔問題，是外洩防線。
 # 為什麼用 `/cmd/*` + `!/cmd/.gitignore` 而不是 `/cmd/`：
-#   後者會把目錄自帶的那份 `.gitignore`（由 UCL_LettersPath.EnsureCmdDir 生成）
+#   後者會把目錄自帶的那份 `.gitignore`（由寫回傳檔的那一端生成：Senate `SCP_CmdPayload`／Editor `UCL_LettersPath.EnsureCmdDir`）
 #   一起 ignore 掉 ⇒ 規則不會入版控、不會傳給 clone。留下那一份，規則就跟著目錄走。
 /cmd/*
 !/cmd/.gitignore
@@ -46,8 +46,8 @@ _sculpture_*.md
 
 ### 密封信（sealed letters）— 只存在 private 分支
 # 追蹤分支對應的 remote 是公開的，任何進去的東西都是公開的、且 history 刪不掉。
-# 密封信靠這行擋在公開分支之外；寫入走 tools/private_letter.py（plumbing 直接 commit
-# 到 private 分支，不切分支、不經過 index）。**這行是唯一一道自動防線** ——
+# 密封信靠這行擋在公開分支之外；寫入走 `senate cmd sealed-letter`（直接 commit
+# 到 private 分支，不切分支、不經過公開的 master）。**這行是唯一一道自動防線** ——
 # 刪掉它，下一次 git add -A 就會把私密信推上公開網路。
 sealed/
 
