@@ -1,0 +1,15 @@
+{
+	"schema_version": 1,
+	"kind": "swap",
+	"at_utc": "2026-10-01T08:56:14.1219011Z",
+	"persona": "Template",
+	"from": "BTC",
+	"from_units_e8": 100000000,
+	"from_bid_usd": 83529.08,
+	"to": "JPY",
+	"to_units_e8": 1311271290224385,
+	"to_ask_usd": 0.00635735,
+	"fee_factor": 0.998001,
+	"value_usd": 83529.08,
+	"source": "swap"
+}

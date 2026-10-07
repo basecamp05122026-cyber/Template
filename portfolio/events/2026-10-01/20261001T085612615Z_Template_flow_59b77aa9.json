@@ -1,0 +1,11 @@
+{
+	"schema_version": 1,
+	"kind": "flow",
+	"at_utc": "2026-10-01T08:56:12.6156741Z",
+	"persona": "Template",
+	"symbol": "BTC",
+	"delta_e8": 100000000,
+	"bid_usd": 83529.08,
+	"value_usd": 83529.08,
+	"source": "grant:selftest-0371"
+}
